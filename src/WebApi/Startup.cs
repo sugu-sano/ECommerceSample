@@ -7,15 +7,29 @@ using Microsoft.OpenApi.Models;
 
 namespace ECommerceSample.WebApi
 {
+    /// <summary>
+    /// アプリケーションの起動
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// アプリケーションの起動
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             this.Configuration = configuration;
         }
 
+        /// <summary>
+        /// アプリケーション設定
+        /// </summary>
         public IConfiguration Configuration { get; }
 
+        /// <summary>
+        /// サービス一覧の構成を設定する
+        /// </summary>
+        /// <param name="services">サービス一覧</param>
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -27,6 +41,11 @@ namespace ECommerceSample.WebApi
             });
         }
 
+        /// <summary>
+        /// リクエストパイプラインと実行環境を設定する
+        /// </summary>
+        /// <param name="app">アプリケーションのリクエストパイプライン</param>
+        /// <param name="env">ホストされるアプリケーションの実行中の環境</param>
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

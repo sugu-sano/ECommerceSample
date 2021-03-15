@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace ECommerceSample.WebApi.Controllers
 {
+    /// <summary>
+    /// 天気予報APIコントローラー
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -17,11 +20,19 @@ namespace ECommerceSample.WebApi.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
+        /// <summary>
+        /// 天気予報APIコントローラー
+        /// </summary>
+        /// <param name="logger">ロガー</param>
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             this._logger = logger;
         }
 
+        /// <summary>
+        /// 天気予報の一覧を取得する
+        /// </summary>
+        /// <returns>天気予報の一覧</returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

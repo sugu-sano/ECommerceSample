@@ -25,6 +25,6 @@ namespace ECommerceSample.WebApi
         /// <summary>
         /// 概要
         /// </summary>
-        public string Summary { get; set; }
+        public string Summary { get; set; } = string.Empty;
     }
 }

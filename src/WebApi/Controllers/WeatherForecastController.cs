@@ -9,9 +9,7 @@ namespace ECommerceSample.WebApi.Controllers
     /// <summary>
     /// 天気予報APIコントローラー
     /// </summary>
-    [ApiController]
-    [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : ApiControllerBaseV1
     {
         private static readonly string[] Summaries = new[]
         {

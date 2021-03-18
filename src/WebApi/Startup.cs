@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -33,7 +34,11 @@ namespace ECommerceSample.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddApiVersioning((options) =>
+            {
+                options.DefaultApiVersion = new ApiVersion(majorVersion: 1, minorVersion: 0);
+                options.AssumeDefaultVersionWhenUnspecified = true;
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

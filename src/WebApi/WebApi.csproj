@@ -4,18 +4,22 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>ECommerceSample.WebApi</AssemblyName>
     <RootNamespace>ECommerceSample.WebApi</RootNamespace>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\net5.0\ECommerceSample.WebApi.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'WebApi' " />
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.1" />
   </ItemGroup>
 
   <ItemGroup>

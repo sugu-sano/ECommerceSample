@@ -8,7 +8,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>ECommerceSample.Infrastructure</AssemblyName>
     <RootNamespace>ECommerceSample.Infrastructure</RootNamespace>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

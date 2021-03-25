@@ -1,6 +1,4 @@
-﻿using ECommerceSample.Infrastructure.DB;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using System.Threading.Tasks;
 
 namespace ECommerceSample.Infrastructure
@@ -19,8 +17,7 @@ namespace ECommerceSample.Infrastructure
             IHostBuilder hostBuilder = Host.CreateDefaultBuilder(args)
                 .ConfigureServices((_, services) =>
                 {
-                    services.AddDbContext<ECommerceDbContext>();
-                    services.AddDbContext<SqliteECommerceDbContext>();
+                    services.AddInfrastructureServices();
                 });
 
             return hostBuilder;

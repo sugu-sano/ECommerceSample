@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Reflection;
+﻿using ECommerceSample.Infrastructure.DB.Tables.AdminAccounts;
+using ECommerceSample.Infrastructure.DB.Tables.AdminPermissions;
+using ECommerceSample.Infrastructure.DB.Tables.AdminRoles;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceSample.Infrastructure.DB
 {
@@ -8,6 +10,31 @@ namespace ECommerceSample.Infrastructure.DB
     /// </summary>
     public class ECommerceDbContext : DbContext
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<AdminAccount> AdminAccounts { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<AdminAccountRole> AdminAccountRoles { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<AdminRole> AdminRoles { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<AdminRolePermission> AdminRolePermissions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DbSet<AdminPermission> AdminPermissions { get; set; }
+
         /// <summary>
         /// EコマースDBコンテキスト
         /// </summary>
@@ -21,7 +48,11 @@ namespace ECommerceSample.Infrastructure.DB
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            builder.ApplyConfiguration<AdminAccount>(new AdminAccountConfiguration());
+            builder.ApplyConfiguration(new AdminAccountRoleConfiguration());
+            builder.ApplyConfiguration<AdminRole>(new AdminRoleConfiguration());
+            builder.ApplyConfiguration(new AdminRolePermissionConfiguration());
+            builder.ApplyConfiguration<AdminPermission>(new AdminPermissionConfiguration());
         }
     }
 }

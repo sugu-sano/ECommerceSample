@@ -6,7 +6,7 @@ namespace ECommerceSample.Infrastructure.DB.Tables
     /// <summary>
     ///  基底テーブルの設定
     /// </summary>
-    internal class TableBaseConfiguration : IEntityTypeConfiguration<TableBase>
+    public abstract class TableBaseConfiguration : IEntityTypeConfiguration<TableBase>
     {
         /// <summary>
         /// 基底テーブルを構成する

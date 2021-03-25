@@ -1,3 +1,4 @@
+using ECommerceSample.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,7 @@ namespace ECommerceSample.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddInfrastructureServices();
             services.AddApiVersioning((options) =>
             {
                 options.DefaultApiVersion = new ApiVersion(majorVersion: 1, minorVersion: 0);

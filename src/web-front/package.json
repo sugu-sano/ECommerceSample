@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "serve": "serve ./out -p 8080",
+    "export": "next build && next export"
   },
   "dependencies": {
     "next": "10.1.1",
@@ -15,5 +14,8 @@
   "volta": {
     "node": "14.16.0",
     "yarn": "1.22.10"
+  },
+  "devDependencies": {
+    "serve": "^11.3.2"
   }
 }

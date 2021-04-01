@@ -521,3 +521,6 @@ MigrationBackup/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
+
+# Mac
+.DS_Store
